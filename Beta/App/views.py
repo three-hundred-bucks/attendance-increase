@@ -2,10 +2,6 @@ from django.shortcuts import render
 from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import redirect 
-import logging
-
-# Get an instance of a logger
-logger = logging.getLogger(__name__)
 
 # Create your views here.
 def login(request):
@@ -33,7 +29,6 @@ def home(request):
 	
 def authed(request):
 	if request != None:
-		logger.error(request.session.get('Authed', True))
 		if request.method == 'POST':
 			if request.POST['action'] == "exit":
 				request.session['Authed'] = False
