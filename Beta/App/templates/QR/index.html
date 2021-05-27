@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Attendance Increase Web-Application</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'App/Styles/Base.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'QR/Styles/QR.css' %}">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'App/Pictures/favicon.ico' %}">
+	</head>
+	<body>
+		<header class="header-image"></header>
+		<main>
+			<div class="logo">
+				<div class="logo-gradient">
+					<div class="logo-picture"></div>
+				</div>
+			</div>
+			<div class="wrapper">
+				<p>Ваш код:</p>
+				<div class="qr"></div>
+			</div>
+		</main>
+	</body>
+</html>

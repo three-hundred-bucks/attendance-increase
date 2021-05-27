@@ -6,6 +6,7 @@ form
 	justify-content: center;
 	width: 100vw;
 	margin-top: 2em;
+	margin-bottom: 2em;
 }
 
 legend
@@ -16,6 +17,7 @@ legend
 
 input
 {
+	font-family: Roboto, sans-serif;
 	font-size: 1em;
 	width: 75vw;
 	height: 1.75em;
@@ -43,7 +45,7 @@ button
 {
 	width: calc(75vw + 2em);
 	height: 2em;
-	margin: 2em 0;
+	margin-top: 2em;
 	background-color: rgba(139, 0, 0, 0.84);	
 	border: 0;
 	border-radius: 5em;

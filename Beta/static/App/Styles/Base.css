@@ -55,6 +55,7 @@ src: url("../Fonts/BebasNeue/BebasNeue Thin.otf") format("opentype");
 {
 	margin: 0;
 	padding: 0;
+	color: #333;
 }
 
 html
@@ -81,6 +82,11 @@ body
 {
 	width: 100%;
 	height: 100%;
+}
+
+a
+{
+	text-decoration: none;
 }
 
 .header-image
@@ -121,13 +127,4 @@ body
 	margin: 3.5vw;
 	background-size: contain;
     background-repeat: no-repeat;
-}
-
-.logo-photo
-{
-	width: 25vw;
-	height: 25vw;
-	border-radius: 100%;
-	margin: 2.5vw;
-	position: absolute;
 }
