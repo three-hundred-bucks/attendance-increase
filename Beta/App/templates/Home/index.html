@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'Home/Styles/Home.css' %}">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="shortcut icon" type="image/x-icon" href="{% static 'App/Pictures/favicon.ico' %}">
+		{% load templates %}
 	</head>
 	<body>
 		<header class="header-image"></header>
@@ -18,8 +19,8 @@
 			</div>
 			<div class="wrapper">
 				<div class="info">
-					<p class="name">Имманнуил Имманнуилович Имманнулов</p>
-					<p class="points">Баллы: 0</p>
+					<p class="name">{% getInfo 'name' %}</p>
+					<p class="points">Баллы: {% getInfo 'points' %}</p>
 				</div>
 				<a href="/schedule" class="button">Расписание</a>
 				<a href="/qr" class="button">Получить QR код</a>

@@ -1,10 +1,47 @@
 from django import template
+import logging
 
 register = template.Library()
 
+@register.tag(name="info")
+@register.simple_tag(takes_context = True)
+def getInfo(context, info):
+	users = [
+	{
+		'login': 'LaxyLax',
+		'pass': 'helpme',
+		'name': 'Олеся Денисовна Панченко',
+		'points': 10000182,
+	},
+	{
+		'login': 'DarkUFO',
+		'pass': 'admin',
+		'name': 'Андрей Сергеевич Михалев',
+		'points': 506,
+	},
+	{
+		'login': 'Darya',
+		'pass': 'IDarya',
+		'name': 'Дарья Владимировна Мелехина',
+		'points': 1026,
+	},
+	{
+		'login': 'Art',
+		'pass': '007',
+		'name': 'Артем Владимирович Петрушенко',
+		'points': 102,
+	},
+	]
+	
+	login = context['request'].session.get('Login', True)
+	for i in users:
+		if login == i.get('login'):
+			return i.get(info)
+
+
 # @register.simple_tag(takes_context = False)
-@register.simple_tag()
-def schedule(): # could feed in additional argument to use as default value
+@register.simple_tag(takes_context = False)
+def schedule():
 	content = {
 		'Понедельник': [
 			{

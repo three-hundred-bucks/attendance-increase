@@ -2,6 +2,42 @@ from django.shortcuts import render
 from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import redirect 
+import logging
+
+users = [
+{
+	'login': 'LaxyLax',
+	'pass': 'helpme',
+	'name': 'Олеся Денисовна Панченко',
+	'points': 10000182,
+},
+{
+	'login': 'DarkUFO',
+	'pass': 'admin',
+	'name': 'Андрей Сергеевич Михалев',
+	'points': 506,
+},
+{
+	'login': 'Darya',
+	'pass': 'IDarya',
+	'name': 'Дарья Владимировна Мелехина',
+	'points': 1026,
+},
+{
+	'login': 'Art',
+	'pass': '007',
+	'name': 'Артем Владимирович Петрушенко',
+	'points': 102,
+},
+]
+
+def signin(request, login, password):
+	for i in users:
+		if i.get('login') == login:
+			if i.get('pass') == password:
+				request.session['Login'] = i.get('login')
+				return True
+	return False
 
 # Create your views here.
 def login(request):
@@ -32,21 +68,21 @@ def authed(request):
 		if request.method == 'POST':
 			if request.POST['action'] == "exit":
 				request.session['Authed'] = False
+				request.session['Login'] = ''
 				return False;
 			if 'Authed' not in request.session:
 				request.session.setdefault('Authed', False)
-				if (request.POST['login'] in ["DarkUFO", "LaxyLax", "Arteom", "Darya",]):
-					if (request.POST['password'] == 'admin'):
-						request.session['Authed'] = True
-						return True
+				request.session.setdefault('Login', '')
+				if (signin(request, request.POST['login'], request.POST['password'])):
+					request.session['Authed'] = True
+					return True
 			else:
 				if request.session.get('Authed', True):
 					return True
 				else:
-					if (request.POST['login'] in ["DarkUFO", "LaxyLax", "Arteom", "Darya",]):
-						if (request.POST['password'] == 'admin'):
-							request.session['Authed'] = True
-							return True
+					if (signin(request, request.POST['login'], request.POST['password'])):
+						request.session['Authed'] = True
+						return True
 		else:
 			if request.session.get('Authed', True):
 				return True
