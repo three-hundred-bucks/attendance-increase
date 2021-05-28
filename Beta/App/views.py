@@ -46,7 +46,8 @@ def login(request):
 	"""
 	if authed(request):
 		return redirect('/home/')
-	return render(request, './Login/index.html')
+	else:
+		return render(request, './Login/index.html')
 
 def schedule(request):
 	if authed(request):
@@ -77,14 +78,14 @@ def authed(request):
 					request.session['Authed'] = True
 					return True
 			else:
-				if request.session.get('Authed', True):
+				if request.session.get('Authed'):
 					return True
 				else:
 					if (signin(request, request.POST['login'], request.POST['password'])):
 						request.session['Authed'] = True
 						return True
 		else:
-			if request.session.get('Authed', True):
+			if request.session.get('Authed'):
 				return True
 	request.session['Authed'] = False
 	return False
