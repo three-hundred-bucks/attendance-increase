@@ -1,2 +1,3 @@
-*/Pictures/*_QR.svg
-*/Pictures/*_QR.png
+# Generated QR files
+Application/static/QR/Pictures/*_QR.svg
+Application/static/QR/Pictures/*_QR.png
