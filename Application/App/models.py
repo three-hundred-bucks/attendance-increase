@@ -4,8 +4,9 @@ from django.db import models
 # class UserInfo(models.Model):
 	# name = models.CharField(max_length=10)
 	# password = 
-	# 'login': 'LaxyLax',
-	# 'pass': 'helpme',
-	# 'name': 'Олеся Денисовна Панченко',
+	# 'login': 'admin',
+	# 'pass': 'password',
+	# 'name': 'Гражданко Кирилл Генадьевич',
 	# 'points': 10000182,
+	# 'course':  'МП-301'
 	
