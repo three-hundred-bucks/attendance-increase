@@ -17,5 +17,5 @@
 * usr3 - pass3
 
 ## Additional
-* The application opens with the link `your ip:8000`
-* The application is adapted only for mobile viewing
+* The application is launched using the `Start Server.bat` file and opens with the link `your ip:8000`.
+* The application is adapted only for mobile viewing.
