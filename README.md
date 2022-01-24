@@ -19,3 +19,4 @@
 ## Additional
 * The application is launched using the `Start Server.bat` file and opens with the link `your ip:8000`.
 * The application is adapted only for mobile viewing.
+* The work does not take into account the issue of security and does not use the internal Django logging system.
