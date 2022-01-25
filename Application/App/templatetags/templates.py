@@ -1,7 +1,9 @@
 from django import template
+from pathlib import Path
 import qrcode
 import json
 import time
+
 
 register = template.Library()
 
@@ -67,7 +69,8 @@ def generateQR(context):
     qr.add_data(obj)
     qr.make(fit=True)
     img = qr.make_image()
-
+    
+    Path("static/QR/Pictures").mkdir(parents=True, exist_ok=True)
     img.save('static/QR/Pictures/' + getInfo(context, 'login') + '_QR.png')
     return ''
 
