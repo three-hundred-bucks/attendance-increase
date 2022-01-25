@@ -6,8 +6,8 @@
 </p>
 
 ## Required python libraries
-* Django
-* Image
+* Django (4.0+ recomended) 
+* Image (7.0+ recomended)
 * QRCode
 
 ## Logins
