@@ -7,8 +7,8 @@
 
 ## Required python libraries
 * Django (4.0+ recomended) 
-* Image (7.0+ recomended)
-* QRCode
+* QRCode (7.0+ recomended)
+* Image 
 
 ## Logins
 * admin - password
