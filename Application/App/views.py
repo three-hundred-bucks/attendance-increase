@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import redirect
-import logging
+
 
 users = [
     {
@@ -52,9 +52,8 @@ def signin(request, login, password):
                 return True
     return False
 
+
 # Create your views here.
-
-
 def login(request):
     """
     Функция отображения для домашней страницы сайта.
@@ -83,6 +82,7 @@ def home(request):
     return redirect('/login/')
 
 
+# Patch for login system (Use the system provided by Django!)
 def authed(request):
     if request != None:
         if request.method == 'POST':
